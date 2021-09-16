@@ -1,19 +1,24 @@
-let firstName = prompt("Enter your first name.")
-let state = prompt("Enter the state you live in (i.e. NE, CA, AZ).")
-let temp = prompt("Enter the temperature in Fahrenheit today.")
-let message = ["wear a warm coat, hat, scarf and gloves.", "wear a warm coat but you won't need a hat, scarf or gloves.", "wear your warmest coat, a warm hat, a scarf, and warm gloves.", "wear a warm coat, hat and gloves. Maybe a scarf too."]
+// This sets the variables
 
-switch (temp) {
-  case 'history':
-    console.log('I love history too!\n');
-    break;
-  case 'math':
-    console.log('Do you like math\n?');
-    break;
- case 'economics':
-    console.log("Economics Book - that's all I have to say");
-    break;
-  default:
-    console.log('Unknown Book');
-}
+let name = prompt("Enter your first name.")
+let letters = prompt("Enter the state you live in (i.e. NE or FL).")
+let fahren = prompt("Enter the temperature in Fahrenheit today.")
+let sentence = ["wear a warm coat, hat, scarf and gloves.", "wear a warm coat but you won't need a hat, scarf or gloves.", "wear your warmest coat, a warm hat, a scarf, and warm gloves.", "wear a warm coat, hat and gloves. Maybe a scarf too."]
  
+ // This tells the person what to wear based off of temp
+ switch (true) {
+  case(fahren <= 32):
+    console.log(`${name}, ${sentence[0]}`)
+    break
+  case (fahren >= 32 && fahren <= 50 && letters == 'NE'):
+    console.log(`${name}, ${sentence[1]}`)
+    break
+ case (fahren >= 32 && fahren <= 50 && letters == 'FL'):
+    console.log(`${name}, ${sentence[2]}`)
+    break
+ case (fahren >= 50 && fahren <= 70):
+    console.log(`${name}, ${sentence[3]}`)
+    break
+  default:
+    console.log(`${name}, have a nice day`)
+}
